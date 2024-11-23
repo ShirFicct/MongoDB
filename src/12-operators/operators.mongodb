@@ -1,0 +1,32 @@
+use("platzi_store")
+
+//$gt  mayor que    $gte mayor igual
+/*db.inventory.find({qty:
+    {$gt: 20}
+})
+
+db.inventory.find({qty:
+  {$gte: 20}
+})
+
+//$lt menor que $lte menor igual
+db.inventory.find({qty:
+    {$lte: 20}
+})
+//mayot a 25 y menir a 35
+db.inventory.find({qty:
+    {$gt: 25, $lt: 35}
+})
+
+db.inventory.find({
+"item.code": "123",
+  qty:
+  {$gte: 20, $lte: 35}
+})*/
+
+//se puede ir combinando operadores
+db.inventory.find({
+  "item.code": {$ne: "123"},
+    qty:
+    {$gte: 20, $lte: 35}
+  })

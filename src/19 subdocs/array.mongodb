@@ -1,0 +1,21 @@
+use("sample_training")
+
+//db.trips.findOne({"start station location.type": "Point"})
+//0 es la posicion del array
+db.companies.find({
+  "relationships.0.person.last_name": "Hastings"
+},{
+  name:1,
+  relationships:1
+})
+//busca en el array de relaciones, si hay un objeto que tenga un atributo person con un atributo first_name con el valor Ben 
+db.companies.find({
+  relationships:{
+    $elemMatch:{
+      "person.first_name": "Ben",
+    }
+  }
+},{
+  name:1,
+  relationships:1
+})

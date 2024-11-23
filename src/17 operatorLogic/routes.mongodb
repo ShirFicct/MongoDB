@@ -1,0 +1,21 @@
+use("sample_training");
+
+/*db.routes.find({airplane: "E70"})
+
+db.routes.find(  { $or:
+  [{dst_airpoty: "BOG"},
+  {src_airport: "BOG"},
+  ]
+
+}  ).count()*/
+
+db.routes.find(
+  { $and :[
+    {airplane: "E70"},
+    { $or: [
+      {dst_airpot: "BOG"},
+      {src_airport: "BOG"},
+    ]
+    }
+  ]
+}).count() 

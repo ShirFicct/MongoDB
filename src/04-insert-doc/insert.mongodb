@@ -1,0 +1,31 @@
+use("platzi_store")
+
+db.products.insertOne({
+  name: "Smartphone",
+  description: "A very nice smartphone",
+  price: 100,
+  category: "Technology",
+  stock: 10,
+  reviews: [
+    {
+      name: "John Doe",
+      comment: "I love this product",
+      rating: 10
+    }
+  ]
+});
+db.products.insertOne({
+  name: "Laptop",
+  description: "A very nice laptop",
+  price: 1000,
+  category: "Technology",
+  stock: 20,
+  reviews: [
+    {
+      name: "Jane Doe",
+      comment: "I love this product",
+      rating: 10
+    }
+  ]
+});
+

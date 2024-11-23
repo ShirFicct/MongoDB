@@ -1,0 +1,36 @@
+use("platzi_store")
+db.productos.drop()
+
+db.productos.insertMany([
+  {
+    _id:1,
+    name: "Smartphone",
+    description: "A very nice smartphone",
+    price: 100,
+
+  },
+  {
+    _id:2,
+    name: "Laptop",
+    description: "A very nice laptop",
+    price: 1000,
+
+  },
+  {
+    _id:3,
+    name: "Laptop",
+    description: "A very nice laptop",
+    price: 1000,
+
+  },
+  {
+    _id:4,
+    name: "Laptop",
+    description: "A very nice laptop",
+    price: 1000,
+
+  }
+]
+)
+
+db.productos.find()

@@ -1,0 +1,7 @@
+db.zips.find({ state: "NY" }).count();
+use("sample_training")
+ls
+db.productos.find()
+db.productos.find
+use("platzi_store")
+show dbs

@@ -1,0 +1,18 @@
+use("platzi_store")
+
+//borra uno
+/*db.inventory.updateMany(
+  {},
+  { $pull: { tags: "book" } }
+)
+*/
+//borra varios
+db.inventory.updateMany(
+  {},
+  { $pull:
+     { tags:{
+        $in: ["appliance", "school"]
+        }
+      }
+    }
+)

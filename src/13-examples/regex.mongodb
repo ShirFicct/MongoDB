@@ -1,0 +1,18 @@
+use("platzi_store")
+
+db.inventory.find8({"item.description":
+  {$regex:/line/}
+})
+
+db.inventory.find8({"item.description":
+  {$regex:/LINE/i}
+})
+
+
+db.inventory.find8({"item.description":
+  {$regex:/line$/i}
+})
+
+db.inventory.find8({"item.description":
+  {$regex:/^line/i}
+})

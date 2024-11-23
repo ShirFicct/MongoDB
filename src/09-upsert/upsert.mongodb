@@ -1,0 +1,13 @@
+use("platzi_store")
+
+db.iot.updateOne({
+  sensor:"A001",
+  date:"2022-01-04"
+  },
+  {$push:{ readings: 12458} },
+{upsert:true}
+)
+
+
+// upsser actualiza el sensor , ya sea que exista o no, si no existe lo crea y si ya existe lo actualiza
+//solo funciona con updateOne

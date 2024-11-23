@@ -1,0 +1,15 @@
+use("platzi_store")
+
+//using eq  igual, viene de forma implicita
+db.inventory.find({qty:20})
+
+
+db.inventory.find({"item.code":"123"})
+
+db.inventory.find({"item.code":{$eq:"123"}})
+
+//using ne  diferente, viene de forma implicita
+//muestra todo lo no sea igual a lo que se le pase
+//mostrara todo lo diferente a 20
+db.inventory.find({qty:{$ne:20}})
+

@@ -1,0 +1,27 @@
+use("sample_training");
+//implicito
+/*db.inspections.find({
+  sector: "Tax Preparers - 891",
+  result: "Unable to Locate"
+}).count()
+*/
+
+//explicito
+db.inspections.find({
+  $or: [
+    { sector: "Tax Preparers - 891" },
+    { result: "Unable to Locate" }
+  ]
+}).count()
+
+
+db.inspections.find({
+  $nor: [
+    { sector: "Tax Preparers - 891" },
+    { result: "Unable to Locate" }
+  ]
+}).count()
+
+db.inspections.find({
+  result:{ $not : {$regex: /Unable to locate/}}
+})

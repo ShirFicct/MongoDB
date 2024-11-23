@@ -1,0 +1,28 @@
+use("platzi_store")
+
+//$in  tiene uno o el otro
+
+/*db.inventory.find({qty:{
+  $in:[20,25]
+}})
+db.inventory.find({qty:{
+  $nin:[20,25]
+}})
+
+//$all tiene los dos
+db.inventory.find({tags:{
+  $all:["book","school"]
+}})*/
+
+//$size   tamaño del array
+db.inventory.find({tags:{
+  $size:3
+}})
+
+//$elemMatch  busca en los elementos del array
+db.survey.find({results:{
+  $elemMatch:{
+    product:"abc",
+    score:{$gte:8}
+  }
+}})

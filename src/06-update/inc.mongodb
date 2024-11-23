@@ -1,0 +1,12 @@
+use("platzi_store")
+
+db.productos.updateOne(
+  { _id: 4 },
+  //puedo mandar varios atospara actualizar y tambien mandar un nuevo atributo
+  {
+    $inc: {
+      price:100
+
+    },
+  }
+)
